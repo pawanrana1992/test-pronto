@@ -56,8 +56,10 @@ class LoginPage extends React.Component{
                         toast.error('Forbidden!');
                     }
                 }).catch(er => {
-                console.log(er.response.data);
-                if(er.response.data && !er.response.data.status && er.response.data.errorMessage){
+                    if(!er.response){
+                        toast.error('Network error!')
+                    }
+                else if(er.response.data && !er.response.data.status && er.response.data.errorMessage){
                     this.setState({ redirectTo: false });
                     toast.error(er.response.data.errorMessage)
                 }else{

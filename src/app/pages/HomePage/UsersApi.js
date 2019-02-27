@@ -76,7 +76,7 @@ class UsersApi extends React.Component {
                                 <div>
                                     <h3 className={'mb-4'}>You are on page : {this.state.pageData.currentPage + 1}</h3>
                                     <p><span>Total Users: {this.state.pageData.totalElements}</span>, Total
-                                        Pages left:<span>{this.state.pageData.totalPages - this.state.page}</span>, <span>Current users you viewed:{this.state.pageData.currentPageSize * (this.state.page + 1)}</span>
+                                        Pages left:<span>{this.state.pageData.totalPages - (this.state.page +1)}</span>
                                     </p>
                                 </div>
 
@@ -112,17 +112,18 @@ class UsersApi extends React.Component {
                                     </button>
                                 </li>
                                 <li className="page-item">
-                                    <button onClick={(e) => this.next(e)} className="page-link" aria-label="Next">
-                                        <span aria-hidden="true">Next</span>
-                                    </button>
+            <button disabled={this.state.pageData.totalPages - (this.state.page+1) ===0 ? true:false} onClick={(e) => this.next(e)} className={`page-link ${this.state.pageData.totalPages - (this.state.page+1) === 0 ?'disabled':''}`} aria-label="Next">
+            <span aria-hidden="true">Next</span>
+            </button>
 
-                                </li>
+            </li>
                             </ul>
                         </nav>
                     </div>
                 </div>
             </div>
         );
+
     }
 }
 
