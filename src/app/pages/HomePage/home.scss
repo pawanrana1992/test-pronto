@@ -1,0 +1,49 @@
+.table{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width:100%;
+    grid-gap: 10px;
+    .user{
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+        position: relative;
+        background-color: #ffffff;
+        max-width: 200px;
+        overflow: hidden;
+        .user-img{
+            position: relative;
+            width: 100%;
+            background-color: red;
+            height: 150px;
+        }
+        .user-body{
+            position: relative;
+            padding: 15px;
+            width: 100%;
+            overflow: hidden;
+            >span,>b{
+                display: block;
+            }
+            >span{
+                display: block;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+}
+
+.page-item{
+    button.disabled,button[disabled]{
+        opacity: 0.5;
+        color:gray !important;
+        background-color: rgba(0,0,0,0.1);
+        &:hover,&:focus{
+            opacity: 0.5;
+            color:gray !important;
+        }
+    }
+}
