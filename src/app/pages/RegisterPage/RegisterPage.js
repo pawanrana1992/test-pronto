@@ -93,8 +93,8 @@ class RegisterPage extends React.Component {
                                                className={'form-control'} placeholder={'password'} defaultValue={''}/>
                                     </div>
                                     <div className="form-group">
-                                        <select name="gender" className={'form-control'} onChange={this.handleInput}>
-                                            <option value="" selected={true} disabled={true}>select</option>
+                                        <select name="gender" className={'form-control'} defaultValue={'Select'} onChange={this.handleInput}>
+            
                                             <option value="MALE">Male</option>
                                             <option value="FEMALE">Female</option>
                                             <option value="OTHER">Other</option>
